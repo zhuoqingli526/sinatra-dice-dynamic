@@ -1,5 +1,3 @@
-# Sinatra-Template
+# Sinatra Dice Dynamic
 
-1. `bin/setup`
-2. `bin/dev`
-3. ...
+[Notes for this project are here: _Dynamic path segments_](https://learn.firstdraft.com/lessons/111)

@@ -61,6 +61,8 @@ GEM
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.9)
+    nokogiri (1.14.3-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
     octokit (5.6.1)
@@ -118,6 +120,7 @@ GEM
       rack-protection (= 3.0.6)
       sinatra (= 3.0.6)
       tilt (~> 2.0)
+    sqlite3 (1.6.2-x86_64-darwin)
     sqlite3 (1.6.2-x86_64-linux)
     table_print (1.5.7)
     tabulo (2.8.2)
@@ -141,6 +144,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES

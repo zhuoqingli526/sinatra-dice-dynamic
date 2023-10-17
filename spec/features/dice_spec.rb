@@ -26,7 +26,7 @@ describe "/dice/2/6" do
 end
 
 describe "/dice/2/6" do
-  it "displays the outcome of rolling two six-sided dice in <li>'s of an unordered list", points: 1 do
+  it "displays the outcome of rolling two six-sided dice in li's of an unordered list", points: 1 do
     visit "/dice/2/6"
 
     expect(page).to have_tag("ul") do
@@ -44,7 +44,7 @@ describe "/dice/2/10" do
 end
 
 describe "/dice/2/10" do
-  it "displays the outcome of rolling two six-sided dice in <li>'s of an unordered list", points: 1 do
+  it "displays the outcome of rolling two six-sided dice in li's of an unordered list", points: 1 do
     visit "/dice/2/10"
 
     expect(page).to have_tag("ul") do
@@ -62,7 +62,7 @@ describe "/dice/1/20" do
 end
 
 describe "/dice/1/20" do
-  it "displays the outcome of rolling one 20-sided dice in <li>'s of an unordered list", points: 1 do
+  it "displays the outcome of rolling one 20-sided dice in li's of an unordered list", points: 1 do
     visit "/dice/1/20"
 
     expect(page).to have_tag("ul") do
@@ -80,7 +80,7 @@ describe "/dice/5/4" do
 end
 
 describe "/dice/5/4" do
-  it "displays the outcome of rolling one four-sided dice in <li>'s of an unordered list", points: 1 do
+  it "displays the outcome of rolling one four-sided dice in li's of an unordered list", points: 1 do
     visit "/dice/5/4"
 
     expect(page).to have_tag("ul") do
@@ -89,20 +89,26 @@ describe "/dice/5/4" do
   end
 end
 
-describe "/dice/50/6" do
-  it "has a level one heading with the text '50d6'", points: 1 do
-    visit "/dice/50/6"
+describe "/dice/[RANDOM_DICE]/[RANDOM_SIDES]" do
+  it "has a level one heading with the text '[RANDOM_DICE]d[RANDOM_SIDES]'", points: 1 do
 
-    expect(page).to have_tag("h1", text: /50d6/i)
+    random_dice = rand(100)
+    random_sides = rand(100)
+    visit "/dice/#{random_dice}/#{random_sides}"
+
+    expect(page).to have_tag("h1", text: "#{random_dice}d#{random_sides}")
   end
 end
 
-describe "/dice/50/6" do
-  it "displays the outcome of rolling 50 six-sided dice in <li>'s of an unordered list", points: 1 do
-    visit "/dice/50/6"
+describe "/dice/[RANDOM_DICE]/[RANDOM_SIDES]" do
+  it "displays the outcome of rolling [RANDOM_DICE] [RANDOM_SIDES]-sided dice in li's of an unordered list", points: 3 do
+
+    random_dice = rand(100)
+    random_sides = rand(100)
+    visit "/dice/#{random_dice}/#{random_sides}"
 
     expect(page).to have_tag("ul") do
-      with_tag("li", :text => /\d+/, :count => 50)
+      with_tag("li", :text => /\d+/, :count => random_dice)
     end
   end
 end

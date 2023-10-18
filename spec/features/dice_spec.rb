@@ -96,7 +96,7 @@ describe "/dice/[RANDOM_DICE]/[RANDOM_SIDES]" do
     random_sides = rand(100)
     visit "/dice/#{random_dice}/#{random_sides}"
 
-    expect(page).to have_tag("h1", text: "#{random_dice}d#{random_sides}")
+    expect(page).to have_tag("h1", text: /\s*#{random_dice}d#{random_sides}\s*/)
   end
 end
 
